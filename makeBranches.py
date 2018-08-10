@@ -58,21 +58,12 @@ def main():
         epilog=EPILOG,
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-    # parser.add_argument('-b', '--remove',
-    #                     action='store_true',
-    #                     help='delete all local branches except the student and develop branches')
-
     parser.add_argument('-d', '--directory',
                         default=os.getcwd(),
                         help="the directory of the repository")
 
     parser.add_argument('-b', '--branch', default=DEFAULT_STEP_BRANCH,
                         help="branch where the steps are. Default is master")
-
-    # parser.add_argument('develop_branches',
-    #                     nargs="*",
-    #                     default=DEVELOP_DEFAULT,
-    #                     help = "the branches where snapshots will be copied from")
 
     parsed = parser.parse_args()
 
