@@ -38,8 +38,9 @@ def makeBranches(repo_directory, branch_code_steps):
 
 def get_branch_name_from_commit_message(message):
     first_line = message.split("\n")[0]
+    just_title = first_line.split(" ")[0]
     safe_message = "".join(
-        c for c in message if c.isalnum() or c in SAFE_CHARS).strip()
+        c for c in just_title if c.isalnum() or c in SAFE_CHARS).strip()
     return (safe_message[:MAX_LENGTH]
             if len(safe_message) >
             MAX_LENGTH else safe_message)
